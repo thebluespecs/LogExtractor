@@ -1,22 +1,16 @@
 cmake_minimum_required(VERSION 3.1...3.14)
 project( LogExtractor )
 
-# -------------SMOL--------------------
-# set(core ./Smol/src/core)
-# set(log ./Smol/src/log)
-
-# set(smolheader ./Smol)
-
 #-------------VENDOR--------------------
-# set(vspdlog ./Smol/vendor/spdlog/include)
-# include_directories(${core} ${log} ${smolheader} ${vspdlog})
+set(vspdlog ./vendor/spdlog/include)
+find_package(Boost COMPONENTS system filesystem REQUIRED)
+include_directories(${Boost_INCLUDE_DIR})
 
 #-------------SOURCE--------------------
-# SET(smolsrc ${core}/Application.cpp ${log}/Log.cpp)
-include_directories(./src/include)
-SET(source ./src/main.cpp)
+SET(source ./src/main.cpp ./src/Log.cpp)
+include_directories(./src/include ${vspdlog})
 
+# -----------EXECUTION------------------
 # ADD_LIBRARY(smol SHARED ${smolsrc})
-
 ADD_EXECUTABLE(LogExtractor ${source})
-# TARGET_LINK_LIBRARIES(LogExtractor smol)
+TARGET_LINK_LIBRARIES(LogExtractor ${Boost_LIBRARIES})
