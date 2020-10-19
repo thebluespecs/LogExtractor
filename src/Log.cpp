@@ -7,8 +7,7 @@ namespace LE {
 
     void Log::Init() 
     {
-        // spdlog::set_pattern("[%H:%M:%S %z] [%n] [%^---%L---%$] [thread %t] %v");
-        spdlog::set_pattern("%Y-%m-%dT%H:%M:%S.%eZ,%v");
+        spdlog::set_pattern("%v");
 
         s_Logger = spdlog::stdout_color_mt("LogExtractor");
         s_Logger->set_level(spdlog::level::info);
