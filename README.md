@@ -36,5 +36,5 @@ There are no dependent libraries that are statically linked. but the program req
   2. `cmake ..`
   3. `make`
 
-**RUN** 
+**RUN** \
 `./LogExtractor -f 2020-10-14T16:39:43.394Z{startTime} -t 2020-10-14T16:39:43.395Z{endTime} -i ../logs{logDirectory}`
