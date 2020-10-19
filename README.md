@@ -4,19 +4,19 @@ A log extractor built as a part of interview assignent for MCQDB LLC.
 ### Algorithm
 1. Iterate through the directory contents or the logfiles
 2. Load every file in the virtual memory because file size could overload a buffer or ram memory in some cases.
-3. There are two cases in which required logs can occur : 
-    A. Same file : check if the start time and end time lie between the first log and last log of the file.
-    B. Span over multiples files : starting at the start time lying in file, keep track of the files till the end time occurs in one. The array is the required files.
+3. There are two cases in which required logs can occur : \
+    A. Same file : check if the start time and end time lie between the first log and last log of the file.\
+    B. Span over multiples files : starting at the start time lying in file, keep track of the files till the end time occurs in one. The array is the required files.\
 
 ### BottleNeck
-The major bottle neck is reading the file into the physical memory. but that can be solved if creating memory maps of files or reading the large file buffer by buffer.
+The major bottle neck is reading the file into the physical memory. but that can be solved if creating memory maps of files or reading the large file buffer by buffer.\
 
-Some benchmarks of major methods are given below. These were recorded on files with size greator than 4G.
-method	 millions of int. per s 
-C read	         70
-C fread	        124
-C++ ifstream	124
-mmap	        125
+Some benchmarks of major methods are given below. These were recorded on files with size greator than 4G.\
+method	 millions of int. per/s \
+C read	         70\
+C fread	        124\
+C++ ifstream	  124\
+mmap	          125\
 
 
 ### Logging
