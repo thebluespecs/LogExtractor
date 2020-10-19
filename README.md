@@ -38,3 +38,7 @@ There are no dependent libraries that are statically linked. but the program req
 
 **RUN** \
 `./LogExtractor -f 2020-10-14T16:39:43.394Z{startTime} -t 2020-10-14T16:39:43.395Z{endTime} -i ../logs{logDirectory}`
+
+**HELP** \
+`./LogExtractor -h` or `./LogExtractor --help`
+
